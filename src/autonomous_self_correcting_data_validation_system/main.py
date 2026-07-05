@@ -4,11 +4,25 @@ from autonomous_self_correcting_data_validation_system.validation import run_val
 
 
 def run():
-    """Run the deterministic validation workflow locally."""
-    sample_input = "Name : john doeEmail : john@gmailPhone : 9876543Age : twenty fiveBlood Group : ABCAddress : Hyderabad"
-    result = run_validation_pipeline(sample_input)
-    print(result["corrected_data"])
-    print(result["final_report"]["summary"])
+
+    sample_input = """
+    Name : john doe
+    Email : john@gmail
+    Phone : 9876543
+    Age : twenty five
+    Blood Group : ABC
+    Address : Hyderabad
+    """
+
+    crew = AutonomousSelfCorrectingDataValidationSystemCrew()
+
+    result = crew.crew().kickoff(
+        inputs={
+            "raw_input": sample_input
+        }
+    )
+
+    print(result)
 
 
 def train():
@@ -40,3 +54,5 @@ if __name__ == "__main__":
     else:
         print(f"Unknown command: {command}")
         sys.exit(1)
+
+from autonomous_self_correcting_data_validation_system.crew import AutonomousSelfCorrectingDataValidationSystemCrew

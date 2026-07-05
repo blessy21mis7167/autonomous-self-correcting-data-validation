@@ -37,7 +37,21 @@ $ crewai run
 
 This command initializes the autonomous_self_correcting_data_validation_system Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+### Backend API
+
+```bash
+uvicorn backend.app:app --reload --host 0.0.0.0 --port 8000
+```
+
+### React frontend
+
+```bash
+cd frontend-react
+npm install
+npm run dev
+```
+
+The React frontend will run on http://localhost:5173 and proxy API requests to the backend.
 
 ## Understanding Your Crew
 
