@@ -1,0 +1,6 @@
+name: required; title_case
+email: required; valid_email
+phone: required; exactly_10_digits
+age: required; integer
+blood_group: allowed_values=A+,A-,B+,B-,AB+,AB-,O+,O-
+address: required
