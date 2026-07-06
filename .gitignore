@@ -6,3 +6,6 @@ __pycache__/
 .DS_Store
 git remote add origin https://github.com/YOUR_USERNAME/autonomous-self-correcting-data-validation.git
 *.pyc
+frontend-react/node_modules/
+frontend-react/dist/
+database/*.db
